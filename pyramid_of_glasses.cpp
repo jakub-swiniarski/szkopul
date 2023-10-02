@@ -11,7 +11,7 @@ int main(){
     int height, time;
     const int capacity=1024; //every glass has a capacity of 1024 to avoid floating point numbers
     cin>>height>>time;
-    int pyramid[1000][1000];
+    int pyramid[height][height];
     int fullGlasses=0;
     pyramid[0][0]=time*capacity;
 
@@ -21,8 +21,11 @@ int main(){
                 fullGlasses++;
 
                 int excess=pyramid[i][j]-capacity;
-                pyramid[i+1][j]+=excess/2;
-                pyramid[i+1][j+1]+=excess/2;
+                
+                if(pyramid[i+1][j]!=0) pyramid[i+1][j]=excess/2;
+                else pyramid[i+1][j]+=excess/2;
+                if(pyramid[i+1][j+1]!=0) pyramid[i+1][j+1]=excess/2; 
+                else pyramid[i+1][j+1]=excess/2;
             }
         }
     }
