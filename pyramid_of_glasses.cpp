@@ -11,7 +11,7 @@ int main(){
     unsigned short height, time;
     const unsigned short capacity=1024; //every glass has a capacity of 1024 to avoid floating point numbers
     cin>>height>>time;
-    unsigned short pyramid[height][height];
+    unsigned short pyramid[50][50];
     unsigned short fullGlasses=0;
     pyramid[0][0]=time*capacity;
 
@@ -22,10 +22,8 @@ int main(){
 
                 unsigned short excess=pyramid[i][j]-capacity;
                 
-                if(pyramid[i+1][j]!=0) pyramid[i+1][j]=excess/2;
-                else pyramid[i+1][j]+=excess/2;
-                if(pyramid[i+1][j+1]!=0) pyramid[i+1][j+1]=excess/2; 
-                else pyramid[i+1][j+1]+=excess/2;
+                pyramid[i+1][j]+=excess/2;
+                pyramid[i+1][j+1]+=excess/2;
             }
         }
     }
