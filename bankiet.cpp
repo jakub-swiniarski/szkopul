@@ -8,7 +8,7 @@ int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(NULL);
 
-    short n; //for some reason when i'm using unsigned short, it doesn't give me the right answer
+    short n;
     cin>>n;
     unsigned short guests[n];
     bool checked[n]; 
