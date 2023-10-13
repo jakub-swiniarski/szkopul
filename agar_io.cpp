@@ -32,6 +32,7 @@ int main(){
         for(int i=0; i<enemies.size(); i++){
             if(enemies[i]<player){
                 biggest=enemies[i];
+                biggestIndex=i;
             }
             else{
                 break;
