@@ -22,6 +22,12 @@ int main(){
     int time=0;
     long long biggest=0, biggestIndex=0;
     while(player<enemies.back()){
+        //check if it's possible to win
+        if(player<=enemies[0]){
+            cout<<"NIE";
+            return 0;
+        }
+
         //look for the biggest ball we can eat
         for(int i=0; i<enemies.size(); i++){
             if(enemies[i]<player){
@@ -35,9 +41,12 @@ int main(){
         player+=biggest;
         time++;
         enemies.erase(enemies.begin()+biggestIndex);
+    
+        if(player>=enemies.back()){
+            cout<<time;
+            return 0;
+        }
     }
-
-    cout<<time;
 
     return 0;
 }
