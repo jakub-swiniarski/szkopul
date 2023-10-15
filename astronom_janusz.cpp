@@ -7,6 +7,9 @@ using namespace std;
 typedef unsigned short us;
 
 int main(){
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+
     us n;
     cin>>n;
     us moonPhases[n];
