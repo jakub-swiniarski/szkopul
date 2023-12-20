@@ -8,11 +8,11 @@ int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(0);
 
-    unsigned short height, time;
-    const unsigned short capacity=1024; //every glass has a capacity of 1024 to avoid floating point numbers
+    int height, time;
+    const int capacity=1024; //every glass has a capacity of 1024 to avoid floating point numbers
     cin>>height>>time;
-    unsigned short pyramid[50][50];
-    unsigned short fullGlasses=0;
+    int pyramid[50][50];
+    int fullGlasses=0;
     pyramid[0][0]=time*capacity;
 
     for(int i=0; i<height; i++){
@@ -20,7 +20,7 @@ int main(){
             if(pyramid[i][j]>=capacity){
                 fullGlasses++;
 
-                unsigned short excess=pyramid[i][j]-capacity;
+                int excess=pyramid[i][j]-capacity;
                 
                 pyramid[i+1][j]+=excess/2;
                 pyramid[i+1][j+1]+=excess/2;
