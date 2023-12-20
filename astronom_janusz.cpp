@@ -4,15 +4,13 @@
 
 using namespace std;
 
-typedef unsigned short us;
-
 int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(0);
 
-    us n;
+    int n;
     cin>>n;
-    us moonPhases[n];
+    int moonPhases[n];
     for(us i=0; i<n; i++){
         cin>>moonPhases[i];
     }
