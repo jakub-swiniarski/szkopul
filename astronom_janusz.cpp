@@ -9,30 +9,23 @@ int main(){
     cin.tie(0);
 
     int n;
-    cin>>n;
+    cin >> n;
     int moonPhases[n];
-    for(us i=0; i<n; i++){
-        cin>>moonPhases[i];
-    }
+    for (int i = 0; i < n; i++)
+        cin >> moonPhases[i];
 
-    if(n==1){
+    if (n==1)
         cout<<"UNKNOWN\n";
-    }
-    else if(moonPhases[n-1]>moonPhases[n-2]){
-        if(moonPhases[n-1]==15){
+    else if (moonPhases[n-1] > moonPhases[n-2]) {
+        if (moonPhases[n - 1] == 15)
             cout<<"DOWN\n";
-        }
-        else{
+        else
             cout<<"UP\n";
-        }
-    }
-    else if(moonPhases[n-1]<moonPhases[n-2]){
-        if(moonPhases[n-1]==0){
+    } else if (moonPhases[n - 1] < moonPhases[n - 2]) {
+        if (moonPhases[n - 1] == 0)
             cout<<"UP\n";
-        }
-        else{
+        else
             cout<<"DOWN\n";
-        }
     }
 
     return 0;

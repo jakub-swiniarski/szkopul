@@ -9,44 +9,43 @@ int main(){
     cin.tie(0);
 
     int enemyCount;
-    cin>>enemyCount; 
-    vector <long long> enemies;
-    long long player=2;
-    for(int i=0; i<enemyCount; i++){
+    cin >> enemyCount; 
+    vector<long long> enemies;
+    long long player = 2;
+    for (int i = 0; i < enemyCount; i++) {
         long long input;
-        cin>>input;
+        cin >> input;
         enemies.push_back(input);
     }
     sort(enemies.begin(), enemies.end());
 
-    int time=0;
-    int right=0, middle=0; //for binary search, in this case left is not needed
-    while(player<enemies.back()){
+    int time = 0;
+    int right = 0, middle = 0; //for binary search, in this case left is not needed
+    while (player < enemies.back()) {
         //check if it's possible to win 
-        if(player<=enemies[0]){
-            cout<<"NIE\n";
+        if (player <= enemies[0]) {
+            cout << "NIE\n";
             return 0;
         }
 
         //look for the biggest ball we can eat
-        right=enemies.size()-1;
-        middle=right/2;
-        for(;;){
-            if(enemies[middle]>=player){
-                right=middle;
-                middle=right/2;
-            }
-            else{
-                //eat the found ball
-                player+=enemies[middle];
+        right = enemies.size() - 1;
+        middle = right/2;
+        for (;;) {
+            if (enemies[middle] >= player) {
+                right = middle;
+                middle = right / 2;
+            } else {
+                //eat the ball
+                player += enemies[middle];
                 time++;
-                enemies.erase(enemies.begin()+middle);
+                enemies.erase(enemies.begin() + middle);
                 break;
             }
         }
 
-        if(player>=enemies.back() || enemies.size()<1){
-            cout<<time<<'\n';
+        if(player >= enemies.back() || enemies.size() < 1) {
+            cout << time<<'\n';
             return 0;
         }
     } 
