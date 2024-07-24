@@ -1,10 +1,10 @@
-//https://szkopul.edu.pl/problemset/problem/NQamRQ2UZEwn6gPqo-l6nat9/site/?key=statement
+// https://szkopul.edu.pl/problemset/problem/NQamRQ2UZEwn6gPqo-l6nat9/site/
 
 #include <bits/stdc++.h>
 
 using namespace std;
 
-int main(){
+int main(void) {
     ios_base::sync_with_stdio(0);
     cin.tie(NULL);
 
@@ -14,23 +14,23 @@ int main(){
     bool checked[n]; 
     for (int i = 0; i < n; i++) {
         cin>>guests[i];
-        guests[i]--; //pomniejszamy wartosc, zeby numeracja gosci zaczynala sie od zera, tak samo jak numeracja indeksow tablicy
+        guests[i]--; // pomniejszamy wartosc, zeby numeracja gosci zaczynala sie od zera, tak samo jak numeracja indeksow tablicy
     }
 
-    int currentIndex; 
-    int tableCount = 0;
+    int current_index; 
+    int table_count = 0;
     for (int i = 0; i < n; i++) {
         if (!checked[i]) {
-            currentIndex = i;
-            while (!checked[currentIndex]) {
-                checked[currentIndex] = true;
-                currentIndex = guests[currentIndex];
+            current_index = i;
+            while (!checked[current_index]) {
+                checked[current_index] = true;
+                current_index = guests[current_index];
             }
-            tableCount++;
+            table_count++;
         }
     }
 
-    cout << tableCount<<'\n';
+    cout << table_count<<'\n';
 
     return 0;
 }
