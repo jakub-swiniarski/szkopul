@@ -17,9 +17,9 @@ bool jest_wieksze(ull podstawa, int wykladnik, ull wartosc) { // czy potegowana 
 }
 
 int main(void) {
-    std::ios_base::sync_with_stdio(false);
-    std::cin.tie(NULL);
-    std::cout.tie(NULL);
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
 
     int ile_pytan;
     cin >> ile_pytan;

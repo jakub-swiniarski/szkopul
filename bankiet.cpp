@@ -13,7 +13,7 @@ int main(void) {
     int guests[n];
     bool checked[n]; 
     for (int i = 0; i < n; i++) {
-        cin>>guests[i];
+        cin >> guests[i];
         guests[i]--; // pomniejszamy wartosc, zeby numeracja gosci zaczynala sie od zera, tak samo jak numeracja indeksow tablicy
     }
 

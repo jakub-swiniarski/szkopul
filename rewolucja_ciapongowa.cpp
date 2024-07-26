@@ -5,8 +5,8 @@
 using namespace std;
 
 int main(void) {
-    std::ios_base::sync_with_stdio(false);
-    std::cin.tie(NULL);
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 
     int ile_miast, ile_pytan;
     cin >> ile_miast >> ile_pytan;
