@@ -22,7 +22,7 @@ int main(void) {
     int high = n_values - 1;
 
     while (high >= low) {
-        int mid = low + (high - low) / 2;
+        int mid = (low + high) / 2;
 
         if (values[mid] == x) { // found the value
             while (mid > 0) { // look for the first appearance
