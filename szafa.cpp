@@ -8,6 +8,10 @@ using namespace std;
 typedef unsigned long long ull;
 
 int main(void) {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
     ull ile_szaf;
     cin >> ile_szaf;
     ull szafy[ile_szaf + 1];
