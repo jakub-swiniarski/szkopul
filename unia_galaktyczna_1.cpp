@@ -25,7 +25,7 @@ int main(void) {
     cout.tie(NULL);
 
     for (int i = 0; i < max_n; i++)
-        rep[i] = i;
+        rep[i] = i; // domyslnie unie sa jednoelementowe i kazdy element jest przedstawicielem swojej unii
 
     int n;
     cin >> n;
