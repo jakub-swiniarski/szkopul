@@ -4,7 +4,7 @@
 
 using namespace std;
 
-constexpr int max_n = 1e6 + 9;
+inline constexpr int max_n = 1e6 + 9;
 int rep[max_n];
 
 int find(int a) {

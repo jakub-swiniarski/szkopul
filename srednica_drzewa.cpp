@@ -10,7 +10,7 @@ struct Node {
     bool visited;
 };
 
-constexpr int max_n = 1e5 + 9;
+inline constexpr int max_n = 1e5 + 9;
 Node tree[max_n];
 int farthest_node, max_depth;
 
