@@ -23,9 +23,8 @@ void find_farthest(int v, int depth = 0) {
     }
     
     for (int i : tree[v].adj_nodes) {
-        if (tree[i].visited)
-            continue;
-        find_farthest(i, depth + 1);
+        if (!tree[i].visited)
+            find_farthest(i, depth + 1);
     }
 }
 
@@ -46,7 +45,7 @@ int main(void) {
 
     find_farthest(1);
 
-    for(int i = 0; i <= n; i++)
+    for (int i = 0; i <= n; i++)
         tree[i].visited = false;
 
     max_depth = 0;
