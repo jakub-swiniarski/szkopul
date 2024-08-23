@@ -11,7 +11,7 @@ int find(int a) { // znajdz reprezentanta unii, do ktorej nalezy element a
     if (rep[a] == a)
         return a;
 
-    rep[a] = find(rep[a]); // skroc droge do reprezentanta
+    rep[a] = find(rep[a]); // szukaj dalej i skroc droge do reprezentanta
     return rep[a];
 }
 
