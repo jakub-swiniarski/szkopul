@@ -5,17 +5,17 @@
 using namespace std;
 
 inline constexpr int max_n = 1e6 + 9;
-int rep[max_n];
+int rep[max_n]; // reprezentantem unii jest element i, dla ktorego rep[i] == i, jesli rep[i] != i, to znaczy ze element i zna droge do reprezentanta swojej unii
 
-int find(int a) {
+int find(int a) { // znajdz reprezentanta unii, do ktorej nalezy element a
     if (rep[a] == a)
         return a;
 
-    rep[a] = find(rep[a]);
+    rep[a] = find(rep[a]); // skroc droge do reprezentanta
     return rep[a];
 }
 
-void join(int a, int b) {
+void join(int a, int b) { // stworz unie
     rep[find(a)] = rep[find(b)];
 }
 
