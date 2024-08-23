@@ -5,7 +5,7 @@
 using namespace std;
 
 inline constexpr int max_n = 1e6 + 9;
-int rep[max_n]; // reprezentantem unii jest element i, dla ktorego rep[i] == i, jesli rep[i] != i, to znaczy ze element i zna droge do reprezentanta swojej unii
+int rep[max_n]; // reprezentantem unii jest element i, dla ktorego rep[i] == i, jesli rep[i] != i, to znaczy, ze element i zna droge do reprezentanta swojej unii
 
 int find(int a) { // znajdz reprezentanta unii, do ktorej nalezy element a
     if (rep[a] == a)
