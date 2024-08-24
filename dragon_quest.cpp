@@ -16,7 +16,7 @@ int main(void) {
         int hp, n, m;
         cin >> hp >> n >> m;
 
-        while (n > 0 && hp > 20) { // jesli hp < 20, to pierwsze zaklecie zwiekszy hp
+        while (n > 0 && hp > (hp / 2) + 10) { // sprawdzamy, czy oplaca sie uzyc tego zaklecia
             n--;
             hp = (hp / 2) + 10;
         }
