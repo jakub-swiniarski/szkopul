@@ -5,10 +5,10 @@
 using namespace std;
 
 inline constexpr int limit = 1e6 + 9;
-int rep_grupy[limit];
-int rep_koloru[limit];
+int rep_grupy[limit]; // kto jest reprezentantem i-tego samochodu w grupie samochodow o tych samych kolorach
+int rep_koloru[limit]; // kto jest reprezentantem i-tego koloru
 
-int znajdz_rep(int a) {
+int znajdz_rep(int a) { // znajdz reprezentanta grupy samochodow
     if (rep_grupy[a] == a)
         return a;
 
@@ -16,7 +16,7 @@ int znajdz_rep(int a) {
     return rep_grupy[a];
 }
 
-void polacz(int a, int b) {
+void polacz(int a, int b) { // polacz grupy samochodow
     rep_grupy[znajdz_rep(a)] = rep_grupy[znajdz_rep(b)];
 }
 
@@ -33,9 +33,9 @@ int main(void) {
         cin >> kolor_samochodu;
         
         if (rep_koloru[kolor_samochodu] == 0)
-            rep_koloru[kolor_samochodu] = i;
+            rep_koloru[kolor_samochodu] = i; // jesli nie ma jeszcze reprezentanta tego koloru, to zostaje nim aktualny samochod
 
-        rep_grupy[i] = rep_koloru[kolor_samochodu];
+        polacz(i, rep_koloru[kolor_samochodu]); // przydzielamy samochod do grupy samochodow o tych samych kolorach
     }
 
     for (int i = 1; i <= ile_miast; i++) {
@@ -44,14 +44,14 @@ int main(void) {
 
         if (rep_koloru[a] == 0 ||
             a == b)
-            continue;
+            continue; // kontynuujemy, jesli nie ma przedstawiciela pierwszego koloru, lub gdy kolory sa takie same
 
         if (rep_koloru[b] == 0)
             rep_koloru[b] = rep_koloru[a];
         else
-            polacz(rep_koloru[a], rep_koloru[b]);
+            polacz(rep_koloru[a], rep_koloru[b]); // jesli malujemy samochod na kolor, ktorego przedstawiciele juz istnieja, to musimy polaczyc grupy
 
-        rep_koloru[a] = 0;
+        rep_koloru[a] = 0; // nie ma juz przedstawicieli koloru a, bo wszystkie samochody o kolorze a zostaly przemalowane na kolor b
     }
 
     int kolory_rep[ile_samochodow]; // kolory reprezentantow
