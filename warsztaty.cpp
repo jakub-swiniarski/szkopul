@@ -35,7 +35,7 @@ int main(void) {
         if (rep_koloru[kolor_samochodu] == 0)
             rep_koloru[kolor_samochodu] = i; // jesli nie ma jeszcze reprezentanta tego koloru, to zostaje nim aktualny samochod
 
-        polacz(i, rep_koloru[kolor_samochodu]); // przydzielamy samochod do grupy samochodow o tych samych kolorach
+        rep_grupy[i] = rep_koloru[kolor_samochodu]; // przydzielamy samochod do grupy samochodow o tych samych kolorach
     }
 
     for (int i = 1; i <= ile_miast; i++) {
