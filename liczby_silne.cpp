@@ -12,7 +12,7 @@ inline constexpr ull limit = 1e13;
 std::vector<ull> znajdz_liczby_silne(void) {
     vector<ull> silnie;
     ull silnia = 1;
-    for (int i = 2; silnia <= limit; i++) {
+    for (ull i = 2; silnia <= limit; i++) {
         silnie.push_back(silnia);
         silnia *= i;
     }
