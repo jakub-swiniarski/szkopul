@@ -9,7 +9,7 @@ using ull = unsigned long long;
 
 inline constexpr ull limit = 1e13;
 
-std::vector<ull> znajdz_liczby_silne(void) {
+vector<ull> znajdz_liczby_silne(void) {
     vector<ull> silnie;
     ull silnia = 1;
     for (ull i = 2; silnia <= limit; i++) {
