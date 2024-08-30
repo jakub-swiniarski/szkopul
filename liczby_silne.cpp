@@ -49,10 +49,8 @@ int main(void) {
         ull a, b;
         cin >> a >> b;
 
-        ull wynik;
-
-        wynik = sumy_pref[distance(liczby_silne.begin(), --upper_bound(liczby_silne.begin(), liczby_silne.end(), b))] -
-                sumy_pref[distance(liczby_silne.begin(), --lower_bound(liczby_silne.begin(), liczby_silne.end(), a))];
+        ull wynik = sumy_pref[distance(liczby_silne.begin(), --upper_bound(liczby_silne.begin(), liczby_silne.end(), b))] -
+                    sumy_pref[distance(liczby_silne.begin(), --lower_bound(liczby_silne.begin(), liczby_silne.end(), a))];
 
         cout << wynik << '\n';
     }
