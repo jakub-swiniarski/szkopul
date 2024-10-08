@@ -7,7 +7,7 @@ using namespace std;
 
 typedef long long ll;
 
-inline constexpr ll limit = 1e6 + 7; // for some reason 1e6 is not enough
+inline constexpr ll limit = 1e6 + 9; // for some reason 1e6 is not enough
 
 vector<ll> sieve(void) {
     bool is_prime[limit];
