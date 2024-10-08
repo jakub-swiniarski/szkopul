@@ -7,7 +7,7 @@
 
 using namespace std;
 
-inline constexpr int limit = 1000;
+inline constexpr int limit = 1e3 + 9;
 
 int n, m;
 string tab[limit];
