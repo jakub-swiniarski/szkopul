@@ -26,10 +26,6 @@ pair<LL, vector<LL>> dijkstra(const Graph& graph, LL i_src, LL i_end) {
     while (!visit_queue.empty()) {
         int i_cur = visit_queue.top().second;
         visit_queue.pop();
-
-        if (visited[i_cur])
-            continue;
-
         visited[i_cur] = true;
 
         for (const auto& i : graph[i_cur]) {
