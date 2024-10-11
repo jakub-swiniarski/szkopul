@@ -14,7 +14,7 @@ using Graph = vector<vector<Edge>>;
 
 inline constexpr LL distance_max = numeric_limits<LL>::max();
 
-pair<LL, vector<LL>> dijkstra(const Graph& graph, LL i_src) {
+pair<LL, vector<LL>> dijkstra(const Graph& graph, LL i_src, LL i_end) {
     vector<LL> distances(graph.size(), distance_max);
     vector<LL> previous(graph.size(), -1);
     vector<bool> visited(graph.size(), false);
@@ -24,7 +24,7 @@ pair<LL, vector<LL>> dijkstra(const Graph& graph, LL i_src) {
     visit_queue.push({ 0, i_src });
 
     while (!visit_queue.empty()) {
-        auto [distance_cur, i_cur] = visit_queue.top();
+        int i_cur = visit_queue.top().second;
         visit_queue.pop();
 
         if (visited[i_cur])
@@ -44,7 +44,7 @@ pair<LL, vector<LL>> dijkstra(const Graph& graph, LL i_src) {
     }
 
     vector<LL> visit_path;
-    for (LL i = graph.size() - 1; i != -1; i = previous[i])
+    for (LL i = i_end; i != -1; i = previous[i])
         visit_path.push_back(i);
     reverse(visit_path.begin(), visit_path.end());
 
@@ -71,7 +71,7 @@ int main(void) {
         graph[b].push_back({ w, a });
     }
 
-    auto [n_moves, visit_path] = dijkstra(graph, 1);
+    auto [n_moves, visit_path] = dijkstra(graph, 1, graph.size() - 1);
     if (n_moves == -1)
         cout << "NIE\n";
     else {
